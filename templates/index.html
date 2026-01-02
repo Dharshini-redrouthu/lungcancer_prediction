@@ -7,10 +7,10 @@
 <body>
 
 <div class="container">
-    <h1>Lung Cancer Prediction System</h1>
+    <h1>Lung Cancer Prediction</h1>
 
     <form method="POST">
-        <input type="number" name="gender" placeholder="Gender (0:Female, 1:Male)" required>
+        <input type="number" name="gender" placeholder="Gender (0: Female, 1: Male)" required>
         <input type="number" name="age" placeholder="Age" required>
         <input type="number" name="smoking" placeholder="Smoking (0/1)" required>
         <input type="number" name="yellow_fingers" placeholder="Yellow Fingers (0/1)" required>
@@ -30,7 +30,9 @@
     </form>
 
     {% if prediction %}
-        <h2>Result: {{ prediction }}</h2>
+        <div class="result {% if prediction == 'Lung Cancer Detected' %}positive{% else %}negative{% endif %}">
+            {{ prediction }}
+        </div>
     {% endif %}
 </div>
 

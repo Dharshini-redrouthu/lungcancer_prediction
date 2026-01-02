@@ -1,33 +1,116 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .container {
-    width: 400px;
-    margin: auto;
-    margin-top: 40px;
-    padding: 20px;
+    width: 420px;
+    padding: 25px;
     background: white;
-    border-radius: 10px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.8s ease-out;
+}
+
+/* Slide animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
 
 input {
     width: 100%;
     margin: 6px 0;
-    padding: 8px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.5);
+    transform: scale(1.02);
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background: green;
+    padding: 12px;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
     color: white;
     border: none;
-    margin-top: 10px;
+    border-radius: 8px;
+    margin-top: 12px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-h1, h2 {
+/* Button hover animation */
+button:hover {
+    background: linear-gradient(135deg, #185a9d, #43cea2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Button click */
+button:active {
+    transform: scale(0.97);
+}
+
+/* Result box */
+.result {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 8px;
     text-align: center;
+    font-size: 18px;
+    animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.result.positive {
+    background: #ffdddd;
+    color: #c0392b;
+}
+
+.result.negative {
+    background: #ddffdd;
+    color: #27ae60;
 }
