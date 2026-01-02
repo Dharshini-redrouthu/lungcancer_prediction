@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Lung Cancer Prediction System</h1>
+
+    <form method="POST">
+        <input type="number" name="gender" placeholder="Gender (0:Female, 1:Male)" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="number" name="smoking" placeholder="Smoking (0/1)" required>
+        <input type="number" name="yellow_fingers" placeholder="Yellow Fingers (0/1)" required>
+        <input type="number" name="anxiety" placeholder="Anxiety (0/1)" required>
+        <input type="number" name="peer_pressure" placeholder="Peer Pressure (0/1)" required>
+        <input type="number" name="chronic_disease" placeholder="Chronic Disease (0/1)" required>
+        <input type="number" name="fatigue" placeholder="Fatigue (0/1)" required>
+        <input type="number" name="allergy" placeholder="Allergy (0/1)" required>
+        <input type="number" name="wheezing" placeholder="Wheezing (0/1)" required>
+        <input type="number" name="alcohol" placeholder="Alcohol (0/1)" required>
+        <input type="number" name="coughing" placeholder="Coughing (0/1)" required>
+        <input type="number" name="shortness_of_breath" placeholder="Shortness of Breath (0/1)" required>
+        <input type="number" name="swallowing_difficulty" placeholder="Swallowing Difficulty (0/1)" required>
+        <input type="number" name="chest_pain" placeholder="Chest Pain (0/1)" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Result: {{ prediction }}</h2>
+    {% endif %}
+</div>
+
+</body>
+</html>
